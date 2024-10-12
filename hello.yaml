@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: hello
+  labels:
+    app: hello
+spec:
+  containers:
+  - name: hello-app
+    image: ayushmaansingh/kube:latest
+    ports:
+    - containerPort: 80  # Ensure the application listens on this port
+  nodeSelector:
+    worker: worker1
